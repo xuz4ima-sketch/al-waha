@@ -91,9 +91,6 @@
     // The application card rises out of the water.
     gsap.from('.apply', { y: 80, opacity: 0, duration: 1.2, ease: EASE, scrollTrigger: { trigger: '.enrol', start: 'top 70%', once: true } });
 
-    // The name in the colophon climbs into place as the page ends.
-    gsap.fromTo('.colophon__mark', { yPercent: 45 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: '.colophon__mark', start: 'top bottom', end: 'bottom bottom', scrub: true } });
-
     return () => {
       moving = false;
       splitTargets().forEach((el) => { el.textContent = el.textContent; el.removeAttribute('aria-label'); delete el.dataset.revealed; });

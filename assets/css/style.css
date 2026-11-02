@@ -1,5 +1,5 @@
 /* Hallmark · shape: custom (library window with the seal, three illustrated doors, teachers on the Blue Qur'an, voices, the application at the spring, colophon under the name) · genre: editorial · theme: custom · redesign: full · job: join, the application in the nav, the hero, each door and its own section, WhatsApp beside it · idea: "Al-Waha is the oasis: the page walks from the library at night, through the indigo and gold of the Blue Qur'an, to the turquoise spring where you apply" · vibe: "indigo dusk, saffron Kufic gold, turquoise spring water"
- * paper: oklch(96% 0.022 84) · accent: oklch(81% 0.152 78) · display: Reem Kufi · body: Readex Pro · outlier: Aref Ruqaa (the name الواحة set as a picture) · hero: a rounded window onto a shelf of Arabic books at night, the Al-Waha seal centred, the name, the line and the application under it · nav: floating bar, name, four anchors, language, WhatsApp, apply · footer: the WhatsApp ask large, the platform, then the name الواحة in Ruqaa across the whole width · signature: the Al-Waha seal over the library, and الواحة in saffron Ruqaa across the colophon
+ * paper: oklch(96% 0.022 84) · accent: oklch(81% 0.152 78) · display: Reem Kufi · body: Readex Pro · outlier: Aref Ruqaa (the name الواحة set as a picture) · hero: a rounded window onto a shelf of Arabic books at night, the Al-Waha seal centred, the name, the line and the application under it · nav: floating bar, name, four anchors, language, WhatsApp, apply · footer: the WhatsApp ask large, the platform, then the name and credits · signature: the Al-Waha seal over the library
  * axes: dark/geometric-kufi/chromatic-saffron · posture: committed (night indigo for hero, teachers and colophon; a saffron band; turquoise spring under the form; saffron only on actions elsewhere) · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V5 · weakest: E, many moving parts for one page; every motion sits in one matchMedia block and ends visible, and the form works and reads with motion off */
 /* Hallmark · answered F8 · parallax, word reveals, magnetic buttons and smooth scroll are the owner's explicit brief for this page; all run only under no-preference and stop under reduced motion */
@@ -21,14 +21,14 @@
 html { background: var(--color-paper); scrollbar-color: var(--color-night-3) var(--color-paper-2); }
 ::selection { background: var(--color-gold); color: var(--color-night); }
 body { font-weight: 400; line-height: 1.8; }
-html[lang="en"] body { line-height: 1.6; }
+html[dir="ltr"] body { line-height: 1.6; }
 h1, h2, h3 { color: inherit; line-height: 1.22; font-weight: var(--display-weight); }
 h2 { font-size: var(--text-section); }
 h3 { font-size: var(--text-title); }
 /* Reem Kufi draws its Arabic small on the body: Arabic heads take a step up so both scripts read at one size */
 html[lang="ar"] h1, html[lang="ar"] h2 { font-size: calc(var(--ar-display-step) * var(--fs, var(--text-section))); }
 html[lang="ar"] h1 { --fs: var(--text-display); }
-html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { line-height: 1.04; }
+html[dir="ltr"] h1, html[dir="ltr"] h2, html[dir="ltr"] h3 { line-height: 1.04; }
 .container {
   padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
   padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
@@ -114,7 +114,28 @@ html[dir="rtl"] .masthead__bar { padding: var(--space-xs) var(--space-xs) var(--
 }
 .round { padding: 0; }
 .nav__toggle { display: none; }
-.lang[lang="ar"] { font-family: var(--font-display); font-size: var(--text-md); }
+/* Language list: four names, each written in its own language, drops from the globe */
+.langs { position: relative; }
+.langs__list {
+  position: absolute; top: calc(100% + var(--space-xs)); inset-inline-end: 0; z-index: var(--z-dropdown);
+  display: grid; gap: var(--space-3xs); min-width: 168px; margin: 0; padding: var(--space-xs); list-style: none;
+  border-radius: var(--radius-card); background: var(--color-night); border: 1px solid color-mix(in oklab, var(--color-on-night) 14%, transparent); box-shadow: var(--shadow-lift);
+  opacity: 0; visibility: hidden; transform: translateY(-8px);
+  transition: opacity var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out), visibility 0s linear var(--dur-short);
+}
+.langs[data-open="true"] .langs__list { opacity: 1; visibility: visible; transform: none; transition: opacity var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out), visibility 0s; }
+.langs__list button {
+  display: flex; align-items: center; width: 100%; min-height: 44px; padding: 0 var(--space-md); border: 0; border-radius: var(--radius-pill);
+  background: transparent; color: var(--color-on-night); font-family: var(--font-body); font-size: var(--text-sm); text-align: start; cursor: pointer;
+  transition: background-color var(--dur-short) var(--ease-out);
+}
+.langs__list button[lang="ar"] { font-family: "Readex Pro", var(--font-body); font-size: var(--text-md); }
+.langs__list button[lang="ru"] { font-family: "Golos Text", var(--font-body); }
+@media (hover: hover) { .langs__list button:hover { background: color-mix(in oklab, var(--color-on-night) 12%, transparent); } }
+.langs__list button:active { background: color-mix(in oklab, var(--color-on-night) 20%, transparent); }
+.langs__list button[aria-current="true"] { color: var(--color-gold); }
+.langs__list button[aria-current="true"]::after { content: ""; width: 6px; height: 6px; margin-inline-start: auto; border-radius: 50%; background: currentColor; }
+.lang .icon { width: 1.125em; height: 1.125em; }
 @media (hover: hover) { .lang:hover, .round:hover, .nav__toggle:hover { background: color-mix(in oklab, var(--color-on-night) 16%, transparent); border-color: var(--color-on-night); } }
 .lang:active, .round:active, .nav__toggle:active { background: color-mix(in oklab, var(--color-on-night) 24%, transparent); }
 
@@ -122,7 +143,7 @@ html[dir="rtl"] .masthead__bar { padding: var(--space-xs) var(--space-xs) var(--
 .hero { padding: var(--window-inset); background: var(--color-paper); }
 .hero__window {
   position: relative; isolation: isolate; overflow: hidden;
-  display: grid; place-items: center; text-align: center;
+  display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; text-align: center;
   min-height: calc(100svh - 2 * var(--window-inset)); max-height: 1080px;
   border-radius: var(--radius-window); background: var(--color-night); color: var(--color-on-night);
   --color-focus: var(--color-focus-on-dark);
@@ -362,7 +383,6 @@ html:not(.js) .apply__nav, html:not(.js) .apply__progress { display: none; }
 .social a { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--color-rule-night); border-radius: 50%; color: var(--color-on-night); transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
 @media (hover: hover) { .social a:hover { background: var(--color-gold); color: var(--color-night); } }
 .social a:active { background: var(--color-gold-deep); }
-.colophon__mark { margin: 0; font-family: var(--font-outlier); font-weight: 700; font-size: var(--text-mark); line-height: 1.05; color: var(--color-gold); text-align: center; direction: rtl; white-space: nowrap; user-select: none; }
 .colophon__base { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 5fr) minmax(0, 2fr); gap: var(--space-lg) var(--gap-columns); align-items: start; padding-block: var(--space-xl) var(--space-2xl); border-top: 1px solid var(--color-rule-night); }
 .colophon__brand { display: flex; align-items: center; gap: var(--space-md); }
 .colophon__logo { width: 56px; height: 56px; padding: var(--space-2xs); border-radius: 50%; background: var(--color-paper); }
@@ -373,7 +393,7 @@ html:not(.js) .apply__nav, html:not(.js) .apply__progress { display: none; }
 .credits a { color: var(--color-on-night); text-underline-offset: 0.2em; }
 .credits a:active { color: var(--color-gold); }
 
-/* Language switch: a circle of the new language opens from the button */
+/* Language switch: a circle of the new language opens from the globe */
 ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
 ::view-transition-new(root) { animation: vt-open 760ms var(--ease-in-out) both; }
 @keyframes vt-open { from { clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 0%)); } to { clip-path: circle(150vmax at var(--vt-x, 50%) var(--vt-y, 0%)); } }
@@ -421,6 +441,8 @@ html:not(.js) .apply__nav, html:not(.js) .apply__progress { display: none; }
   .masthead__bar { gap: var(--space-xs); }
   .lang { padding: 0 var(--space-sm); }
   .masthead__actions .btn--compact { display: none; }
+  /* Russian and French labels run longer than a phone is wide: let them wrap rather than push past the edge */
+  .btn { white-space: normal; text-align: center; padding-block: var(--space-xs); }
   .hero__window { min-height: calc(100svh - 2 * var(--window-inset)); }
   .hero__body { padding: calc(var(--header-h) + var(--space-lg)) var(--space-lg) var(--space-xl); }
   .hero__rule { margin-block: var(--space-lg) var(--space-md); }

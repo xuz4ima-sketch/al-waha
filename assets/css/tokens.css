@@ -45,6 +45,12 @@
   --tracking-display: 0;
 }
 
-html[lang="en"] {
+html[dir="ltr"] {
   --tracking-display: -0.01em;
+}
+
+/* Russian: the same geometric pair, drawn with Cyrillic (Jost after Futura, Golos Text for reading) */
+html[lang="ru"] {
+  --font-display: "Jost", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "Golos Text", "Segoe UI", Tahoma, sans-serif;
 }

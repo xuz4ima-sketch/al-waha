@@ -1,4 +1,4 @@
-// Al-Waha Center: language switch, WhatsApp links, click-to-play videos, mobile menu and the application form.
+// Al-Waha Center: language menu (Arabic, English, Russian, French), WhatsApp links, click-to-play videos, mobile menu and the application form.
 // Motion lives in motion.js; this file works on its own when GSAP or motion.js fail to load.
 // No innerHTML anywhere: every string goes in through textContent or an attribute.
 (() => {
@@ -6,7 +6,8 @@
 
   document.documentElement.classList.add('js');
 
-  const LANGS = ['ar', 'en'];
+  const LANGS = ['ar', 'en', 'ru', 'fr'];
+  const LANG_NAMES = { ar: 'العربية', en: 'English', ru: 'Русский', fr: 'Français' };
   const STORE_KEY = 'alwaha-lang';
   const WA_NUMBER = '201018573856';
   const WA_BASE = 'https://wa.me/' + WA_NUMBER + '?text=';
@@ -28,7 +29,7 @@
       'nav.leaders': 'الإدارة',
       'nav.voices': 'آراء الطلاب',
       'nav.enrol': 'التسجيل',
-      'lang.switch': 'English',
+      'lang.label': 'اللغة:',
       'wa.aria': 'راسلنا على واتساب',
       'cta.short': 'سجّل الآن',
       'hero.name': 'مركز الواحة',
@@ -164,7 +165,7 @@
       'nav.leaders': 'Leadership',
       'nav.voices': 'Student voices',
       'nav.enrol': 'Apply',
-      'lang.switch': 'العربية',
+      'lang.label': 'Language:',
       'wa.aria': 'Message us on WhatsApp',
       'cta.short': 'Apply now',
       'hero.name': 'Al-Waha Center',
@@ -287,6 +288,278 @@
       'wa.p1': 'Assalamu alaikum, I would like to enrol in the Holy Quran and its sciences programme.',
       'wa.p2': 'Assalamu alaikum, I would like to enrol in the Arabic language programme.',
       'wa.p3': 'Assalamu alaikum, I would like to enrol in the Islamic studies programme.'
+    },
+    ru: {
+      'meta.title': 'Центр «Аль-⁠Ваха» | Коран и арабский язык для иностранцев',
+      'meta.desc': 'Центр «Аль-⁠Ваха» обучает Корану, арабскому языку и исламским наукам тех, для кого арабский не родной, — на живых уроках, где бы вы ни были.',
+      'skip': 'Перейти к содержанию',
+      'brand.name': 'Центр «Аль-⁠Ваха»',
+      'brand.home': 'Центр «Аль-⁠Ваха», в начало страницы',
+      'nav.label': 'Разделы страницы',
+      'nav.menu': 'Меню',
+      'nav.programs': 'Программы',
+      'nav.leaders': 'Руководство',
+      'nav.voices': 'Отзывы',
+      'nav.enrol': 'Запись',
+      'lang.label': 'Язык:',
+      'wa.aria': 'Написать нам в WhatsApp',
+      'cta.short': 'Записаться',
+      'hero.name': 'Центр «Аль-⁠Ваха»',
+      'hero.title': 'Коран и арабский язык для иностранцев',
+      'hero.lead': 'Живые уроки с преподавателями центра, где бы вы ни находились.',
+      'hero.apply': 'Подать заявку на обучение',
+      'hero.wa': 'Написать нам в WhatsApp',
+      'programs.title': 'Три двери к знаниям',
+      'programs.intro': 'Выберите, с чего начать, и напишите нам — мы подберём подходящий уровень.',
+      'n1': '1', 'n2': '2', 'n3': '3',
+      'p.pick': 'Выбрать эту дверь',
+      'p1.title': 'Коран и коранические науки',
+      'p1.desc': 'Научитесь читать и заучивать Коран по правилам таджвида — простым языком, для любого уровня.',
+      'p1.cta': 'Записаться на изучение Корана',
+      'p2.title': 'Арабский язык',
+      'p2.desc': 'Пройдите путь от первой буквы до свободного владения на интерактивных уроках для тех, кому арабский не родной.',
+      'p2.cta': 'Записаться на арабский язык',
+      'p3.title': 'Исламские науки',
+      'p3.desc': 'Основы вероучения, фикха и жизнеописания Пророка простым языком — в удобное время и по удобному учебному плану.',
+      'p3.cta': 'Записаться на исламские науки',
+      'leaders.title': 'Кто руководит вашим обучением',
+      'leaders.note': 'За ними — лист «Синего Корана»: куфическое письмо золотом на пергаменте, окрашенном индиго.',
+      'l1.name': 'Шейх Абдель-Таваб аль-Гамали Аль Гуда',
+      'l1.role': 'Генеральный руководитель центра',
+      'l2.name': 'Д-р Махмуд Ахмед Фекри',
+      'l2.role': 'Научный консультант центра по преподаванию и учёбе',
+      'voices.title': 'Говорят родители и ученики',
+      'voices.channel': 'Больше видео на нашем YouTube-канале',
+      'voices.play': 'Смотреть видео:',
+      'v1.title': 'Беседа с отцами учеников центра',
+      'v2.title': 'Беседа с одним из наших учеников',
+      'v3.title': 'Беседа с нашими учениками',
+      'enrol.title': 'Подать заявку на обучение',
+      'enrol.intro': 'Шесть коротких шагов — и заявка откроется в WhatsApp центра, чтобы мы подобрали вам уровень и время.',
+      'enrol.alt': 'Хотите сначала поговорить?',
+      'enrol.alt.link': 'Напишите нам в WhatsApp',
+      'f.step': 'Шаг', 'f.of': 'из', 'f.steps': 'Шаги заявки',
+      'f.s1': 'Ученик', 'f.s2': 'Программы', 'f.s3': 'Уровень', 'f.s4': 'Формат', 'f.s5': 'Время', 'f.s6': 'Контакты', 'f.s7': 'Проверка',
+      'f.s1.title': 'Кто будет у нас учиться?',
+      'f.s2.title': 'Что вы хотите изучать?',
+      'f.s2.hint': 'Выберите одну дверь или несколько.',
+      'f.s3.title': 'С чего вы начинаете?',
+      'f.s4.title': 'Как вам удобнее учиться?',
+      'f.s5.title': 'Когда вам удобно?',
+      'f.s6.title': 'Как с вами связаться?',
+      'f.s7.title': 'Проверьте заявку',
+      'f.s7.hint': 'После отправки откроется WhatsApp с готовым сообщением на номер центра +20 101 857 3856. Нажмите там «Отправить».',
+      'f.name': 'Имя ученика',
+      'f.group': 'Возрастная группа',
+      'f.group.child': 'Ребёнок', 'f.group.child.hint': 'До 12 лет',
+      'f.group.teen': 'Подросток', 'f.group.teen.hint': 'От 13 до 17 лет',
+      'f.group.adult': 'Взрослый', 'f.group.adult.hint': '18 лет и старше',
+      'f.age': 'Возраст (необязательно)',
+      'f.gender': 'Пол', 'f.gender.male': 'Мужской', 'f.gender.female': 'Женский',
+      'f.parent': 'Имя родителя или опекуна',
+      'prog.quran': 'Чтение и таджвид', 'prog.quran.hint': 'Правильное чтение по правилам таджвида',
+      'prog.hifz': 'Заучивание Корана', 'prog.hifz.hint': 'Заучивание и повторение с преподавателем',
+      'prog.arabic': 'Арабский язык', 'prog.arabic.hint': 'От первой буквы до свободного владения',
+      'prog.studies': 'Исламские науки', 'prog.studies.hint': 'Вероучение, фикх и жизнеописание Пророка',
+      'level.zero': 'С нуля', 'level.zero.hint': 'Раньше этого не изучал(а).',
+      'level.basic': 'Базовый уровень', 'level.basic.hint': 'Знаю основы и хочу двигаться дальше.',
+      'level.continuing': 'Продолжение', 'level.continuing.hint': 'Уже учился(-ась) и хочу продолжить.',
+      'f.mode': 'Где', 'mode.online': 'Онлайн', 'mode.onsite': 'Очно в центре',
+      'f.size': 'Занятия', 'size.solo': 'Индивидуально', 'size.group': 'В группе',
+      'f.teacher': 'Преподаватель', 'teacher.male': 'Мужчина', 'teacher.female': 'Женщина', 'teacher.any': 'Неважно',
+      'f.days': 'Дни',
+      'day.sat': 'Суббота', 'day.sun': 'Воскресенье', 'day.mon': 'Понедельник', 'day.tue': 'Вторник', 'day.wed': 'Среда', 'day.thu': 'Четверг', 'day.fri': 'Пятница',
+      'f.times': 'Время суток (по вашему времени)',
+      'time.morning': 'Утро', 'time.morning.hint': '8–12',
+      'time.afternoon': 'День', 'time.afternoon.hint': '12–17',
+      'time.evening': 'Вечер', 'time.evening.hint': '17–22',
+      'f.tz': 'Ваш часовой пояс',
+      'f.tz.hint': 'Определён по настройкам устройства; при необходимости измените.',
+      'f.phone': 'Номер WhatsApp или телефона',
+      'f.phone.hint': 'С кодом страны, например +7 или +20.',
+      'f.email': 'Эл. почта (необязательно)',
+      'f.note': 'Комментарий для преподавателя (необязательно)',
+      'f.note.hint': 'Например, что вы уже изучали или к чему хотите прийти.',
+      'f.prev': 'Назад', 'f.next': 'Далее', 'f.send': 'Отправить в WhatsApp',
+      'f.edit': 'Изменить',
+      'f.announce': 'Шаг {n} из {t}: {name}',
+      'f.done.title': 'Заявка готова в WhatsApp',
+      'f.done.text': 'Нажмите «Отправить» в WhatsApp, и центр ответит вам, чтобы согласовать уровень и время. Если WhatsApp не открылся, нажмите кнопку ниже.',
+      'f.done.again': 'Открыть WhatsApp',
+      'f.done.new': 'Заявка для другого ученика',
+      'f.nojs': 'Для этой формы нужен JavaScript. Вы можете написать нам напрямую в WhatsApp: +20 101 857 3856',
+      'err.name': 'Напишите имя ученика — не меньше двух букв.',
+      'err.group': 'Выберите возрастную группу ученика.',
+      'err.gender': 'Выберите пол.',
+      'err.age': 'Укажите возраст числом от 3 до 99 или оставьте поле пустым.',
+      'err.parent': 'Для ребёнка нужно имя родителя или опекуна.',
+      'err.programs': 'Выберите хотя бы одну дверь.',
+      'err.level': 'Выберите уровень, который ближе всего к вашему.',
+      'err.mode': 'Выберите: онлайн или очно.',
+      'err.size': 'Выберите: индивидуально или в группе.',
+      'err.teacher': 'Выберите преподавателя или «Неважно».',
+      'err.days': 'Выберите хотя бы один день.',
+      'err.times': 'Выберите хотя бы одно время суток.',
+      'err.phone': 'Номер выглядит неполным. Укажите его с кодом страны, от 8 до 15 цифр, например +7 900 000-00-00.',
+      'err.email': 'Адрес выглядит неполным. Напишите его так: name@example.com',
+      'r.student': 'Ученик', 'r.parent': 'Родитель', 'r.programs': 'Программы', 'r.level': 'Уровень', 'r.format': 'Формат',
+      'r.days': 'Дни', 'r.times': 'Время', 'r.tz': 'Часовой пояс', 'r.phone': 'WhatsApp', 'r.email': 'Почта', 'r.note': 'Комментарий',
+      'r.age': 'возраст {n}', 'r.teacher': 'преподаватель: {v}',
+      'msg.head': 'Ассаляму алейкум! Хочу подать заявку на обучение в центре «Аль-Ваха».',
+      'msg.title': 'Заявка',
+      'list.sep': ', ',
+      'footer.title': 'Напишите нам — поможем выбрать программу под ваш уровень.',
+      'footer.number': 'Номер WhatsApp',
+      'footer.platform': 'Учебная платформа «Аль-⁠Ваха»',
+      'footer.platform.note': 'Живые уроки и интерактивные записи — из любой точки мира.',
+      'footer.branch': 'Новый филиал Научной академии для юных учеников и будущих поколений.',
+      'footer.social': 'Мы в соцсетях',
+      'footer.copy': '© 2026 Центр «Аль-⁠Ваха»',
+      'credits.label': 'Источники фотографий',
+      'credit.spring': 'Источник Клеопатры, Сива:',
+      'credit.quran': 'Лист «Синего Корана»:',
+      'credit.pd': 'общественное достояние',
+      's.facebook': 'Facebook', 's.instagram': 'Instagram', 's.youtube': 'YouTube', 's.tiktok': 'TikTok',
+      'wa.general': 'Ассаляму алейкум! Хочу узнать подробнее об обучении в центре «Аль-Ваха».',
+      'wa.p1': 'Ассаляму алейкум! Хочу записаться на программу «Коран и коранические науки».',
+      'wa.p2': 'Ассаляму алейкум! Хочу записаться на программу «Арабский язык».',
+      'wa.p3': 'Ассаляму алейкум! Хочу записаться на программу «Исламские науки».'
+    },
+    fr: {
+      'meta.title': 'Centre Al-⁠Waha | Le Coran et l’arabe pour les non-⁠arabophones',
+      'meta.desc': 'Le Centre Al-⁠Waha enseigne le Saint Coran, la langue arabe et les sciences islamiques aux non-⁠arabophones, en cours en direct où que vous soyez.',
+      'skip': 'Aller au contenu',
+      'brand.name': 'Centre Al-⁠Waha',
+      'brand.home': 'Centre Al-⁠Waha, haut de page',
+      'nav.label': 'Sections de la page',
+      'nav.menu': 'Menu',
+      'nav.programs': 'Programmes',
+      'nav.leaders': 'Direction',
+      'nav.voices': 'Témoignages',
+      'nav.enrol': 'Inscription',
+      'lang.label': 'Langue :',
+      'wa.aria': 'Écrivez-nous sur WhatsApp',
+      'cta.short': 'S’inscrire',
+      'hero.name': 'Centre Al-⁠Waha',
+      'hero.title': 'Le Coran et l’arabe pour les non-⁠arabophones',
+      'hero.lead': 'Des cours en direct avec les enseignants d’Al-⁠Waha, où que vous soyez dans le monde.',
+      'hero.apply': 'Demander une inscription',
+      'hero.wa': 'Écrivez-nous sur WhatsApp',
+      'programs.title': 'Trois portes vers le savoir',
+      'programs.intro': 'Choisissez par où commencer, puis écrivez-nous : nous vous proposerons le niveau qui vous convient.',
+      'n1': '1', 'n2': '2', 'n3': '3',
+      'p.pick': 'Choisir cette porte',
+      'p1.title': 'Le Saint Coran et ses sciences',
+      'p1.desc': 'Apprenez à réciter et à mémoriser le Coran selon les règles du tajwid, expliquées simplement, quel que soit votre niveau.',
+      'p1.cta': 'S’inscrire au Coran',
+      'p2.title': 'Langue arabe',
+      'p2.desc': 'De la première lettre à l’aisance, en cours interactifs conçus pour les non-⁠arabophones.',
+      'p2.cta': 'S’inscrire en arabe',
+      'p3.title': 'Sciences islamiques',
+      'p3.desc': 'Découvrez les bases de la croyance, du fiqh et de la vie du Prophète, avec des horaires et un programme d’études adaptés à vous.',
+      'p3.cta': 'S’inscrire en sciences islamiques',
+      'leaders.title': 'Qui encadre vos études',
+      'leaders.note': 'Derrière eux, un feuillet du Coran bleu : une écriture coufique à l’or sur un vélin teint à l’indigo.',
+      'l1.name': 'Cheikh Abdel-Tawab El-Gamaly Al Gouda',
+      'l1.role': 'Superviseur général du centre',
+      'l2.name': 'Dr Mahmoud Ahmed Fekry',
+      'l2.role': 'Conseiller pédagogique pour l’enseignement et les études au centre',
+      'voices.title': 'Parents et élèves racontent',
+      'voices.channel': 'Plus de vidéos sur notre chaîne YouTube',
+      'voices.play': 'Lire la vidéo :',
+      'v1.title': 'Entretien avec des pères d’élèves d’Al-⁠Waha',
+      'v2.title': 'Entretien avec l’un de nos élèves',
+      'v3.title': 'Entretien avec nos élèves',
+      'enrol.title': 'Demander une inscription',
+      'enrol.intro': 'Six étapes courtes, puis votre demande s’ouvre dans le WhatsApp du centre pour que nous vous proposions un niveau et un horaire.',
+      'enrol.alt': 'Vous préférez d’abord en parler ?',
+      'enrol.alt.link': 'Écrivez-nous sur WhatsApp',
+      'f.step': 'Étape', 'f.of': 'sur', 'f.steps': 'Étapes de la demande',
+      'f.s1': 'Élève', 'f.s2': 'Programmes', 'f.s3': 'Niveau', 'f.s4': 'Format', 'f.s5': 'Horaires', 'f.s6': 'Contact', 'f.s7': 'Vérification',
+      'f.s1.title': 'Qui va étudier avec nous ?',
+      'f.s2.title': 'Que souhaitez-vous étudier ?',
+      'f.s2.hint': 'Choisissez une porte ou plusieurs.',
+      'f.s3.title': 'Par où commencez-vous ?',
+      'f.s4.title': 'Comment souhaitez-vous étudier ?',
+      'f.s5.title': 'Quand êtes-vous disponible ?',
+      'f.s6.title': 'Comment vous joindre ?',
+      'f.s7.title': 'Vérifiez votre demande',
+      'f.s7.hint': 'L’envoi ouvre WhatsApp avec le message prêt pour le numéro du centre, +20 101 857 3856. Appuyez sur « Envoyer » dans WhatsApp.',
+      'f.name': 'Nom de l’élève',
+      'f.group': 'Tranche d’âge',
+      'f.group.child': 'Enfant', 'f.group.child.hint': 'Jusqu’à 12 ans',
+      'f.group.teen': 'Adolescent', 'f.group.teen.hint': 'De 13 à 17 ans',
+      'f.group.adult': 'Adulte', 'f.group.adult.hint': '18 ans et plus',
+      'f.age': 'Âge (facultatif)',
+      'f.gender': 'Sexe', 'f.gender.male': 'Masculin', 'f.gender.female': 'Féminin',
+      'f.parent': 'Nom du parent ou du tuteur',
+      'prog.quran': 'Récitation et tajwid', 'prog.quran.hint': 'Lire correctement selon les règles du tajwid',
+      'prog.hifz': 'Mémorisation du Coran', 'prog.hifz.hint': 'Mémoriser et réviser avec un enseignant',
+      'prog.arabic': 'Langue arabe', 'prog.arabic.hint': 'De la première lettre à l’aisance',
+      'prog.studies': 'Sciences islamiques', 'prog.studies.hint': 'Croyance, fiqh et vie du Prophète',
+      'level.zero': 'Grand débutant', 'level.zero.hint': 'Je n’ai jamais étudié cela.',
+      'level.basic': 'Les bases', 'level.basic.hint': 'Je connais les bases et je veux progresser.',
+      'level.continuing': 'Reprise', 'level.continuing.hint': 'J’ai déjà étudié et je veux continuer.',
+      'f.mode': 'Lieu', 'mode.online': 'En ligne', 'mode.onsite': 'En présentiel au centre',
+      'f.size': 'Cours', 'size.solo': 'Individuel', 'size.group': 'En groupe',
+      'f.teacher': 'Enseignant souhaité', 'teacher.male': 'Un enseignant', 'teacher.female': 'Une enseignante', 'teacher.any': 'Peu importe',
+      'f.days': 'Jours',
+      'day.sat': 'Samedi', 'day.sun': 'Dimanche', 'day.mon': 'Lundi', 'day.tue': 'Mardi', 'day.wed': 'Mercredi', 'day.thu': 'Jeudi', 'day.fri': 'Vendredi',
+      'f.times': 'Moment de la journée (votre heure)',
+      'time.morning': 'Matin', 'time.morning.hint': '8 h – 12 h',
+      'time.afternoon': 'Après-midi', 'time.afternoon.hint': '12 h – 17 h',
+      'time.evening': 'Soir', 'time.evening.hint': '17 h – 22 h',
+      'f.tz': 'Votre fuseau horaire',
+      'f.tz.hint': 'Détecté sur votre appareil ; modifiez-le s’il est inexact.',
+      'f.phone': 'Numéro WhatsApp ou de téléphone',
+      'f.phone.hint': 'Avec l’indicatif du pays, par exemple +33 ou +20.',
+      'f.email': 'E-mail (facultatif)',
+      'f.note': 'Un mot pour l’enseignant (facultatif)',
+      'f.note.hint': 'Par exemple, ce que vous avez déjà étudié ou l’objectif que vous visez.',
+      'f.prev': 'Retour', 'f.next': 'Suivant', 'f.send': 'Envoyer sur WhatsApp',
+      'f.edit': 'Modifier',
+      'f.announce': 'Étape {n} sur {t} : {name}',
+      'f.done.title': 'Votre demande est prête dans WhatsApp',
+      'f.done.text': 'Appuyez sur « Envoyer » dans WhatsApp, et le centre vous répondra pour convenir d’un niveau et d’un horaire. Si WhatsApp ne s’est pas ouvert, utilisez le bouton ci-dessous.',
+      'f.done.again': 'Ouvrir WhatsApp',
+      'f.done.new': 'Demande pour un autre élève',
+      'f.nojs': 'Ce formulaire nécessite JavaScript. Vous pouvez nous écrire directement sur WhatsApp : +20 101 857 3856',
+      'err.name': 'Écrivez le nom de l’élève, au moins deux lettres.',
+      'err.group': 'Choisissez la tranche d’âge de l’élève.',
+      'err.gender': 'Choisissez masculin ou féminin.',
+      'err.age': 'Écrivez l’âge en chiffres, de 3 à 99, ou laissez le champ vide.',
+      'err.parent': 'Pour un enfant, il nous faut le nom d’un parent ou d’un tuteur.',
+      'err.programs': 'Choisissez au moins une porte.',
+      'err.level': 'Choisissez le niveau le plus proche du vôtre.',
+      'err.mode': 'Choisissez en ligne ou en présentiel.',
+      'err.size': 'Choisissez individuel ou en groupe.',
+      'err.teacher': 'Choisissez un enseignant, ou « Peu importe ».',
+      'err.days': 'Choisissez au moins un jour.',
+      'err.times': 'Choisissez au moins un moment de la journée.',
+      'err.phone': 'Ce numéro semble incomplet. Écrivez-le avec l’indicatif du pays, de 8 à 15 chiffres, par exemple +33 6 12 34 56 78.',
+      'err.email': 'Cette adresse semble incomplète. Écrivez-la ainsi : name@example.com',
+      'r.student': 'Élève', 'r.parent': 'Parent', 'r.programs': 'Programmes', 'r.level': 'Niveau', 'r.format': 'Format',
+      'r.days': 'Jours', 'r.times': 'Horaires', 'r.tz': 'Fuseau horaire', 'r.phone': 'WhatsApp', 'r.email': 'E-mail', 'r.note': 'Note',
+      'r.age': '{n} ans', 'r.teacher': 'enseignant : {v}',
+      'msg.head': 'Assalamou alaykoum, je souhaite faire une demande d’inscription au Centre Al-Waha.',
+      'msg.title': 'Demande d’inscription',
+      'list.sep': ', ',
+      'footer.title': 'Écrivez-nous, et nous vous aiderons à choisir le programme adapté à votre niveau.',
+      'footer.number': 'Numéro WhatsApp',
+      'footer.platform': 'Plateforme d’enseignement Al-⁠Waha',
+      'footer.platform.note': 'Cours en direct et enregistrements interactifs, partout dans le monde.',
+      'footer.branch': 'La nouvelle branche de l’Académie scientifique pour les jeunes et les générations futures.',
+      'footer.social': 'Suivez-nous',
+      'footer.copy': '© 2026 Centre Al-⁠Waha',
+      'credits.label': 'Crédits photo',
+      'credit.spring': 'Source de Cléopâtre, Siwa :',
+      'credit.quran': 'Feuillet du Coran bleu :',
+      'credit.pd': 'domaine public',
+      's.facebook': 'Facebook', 's.instagram': 'Instagram', 's.youtube': 'YouTube', 's.tiktok': 'TikTok',
+      'wa.general': 'Assalamou alaykoum, je souhaite en savoir plus sur les études au Centre Al-Waha.',
+      'wa.p1': 'Assalamou alaykoum, je souhaite m’inscrire au programme « Le Saint Coran et ses sciences ».',
+      'wa.p2': 'Assalamou alaykoum, je souhaite m’inscrire au programme de langue arabe.',
+      'wa.p3': 'Assalamou alaykoum, je souhaite m’inscrire au programme de sciences islamiques.'
     }
   };
 
@@ -353,9 +626,9 @@
       const text = d[el.dataset.wa];
       if (typeof text === 'string') el.href = WA_BASE + encodeURIComponent(text);
     });
-    document.querySelectorAll('[data-lang-toggle]').forEach((btn) => {
-      btn.textContent = d['lang.switch'];
-      btn.lang = lang === 'ar' ? 'en' : 'ar';
+    document.querySelectorAll('[data-lang-current]').forEach((el) => { el.textContent = LANG_NAMES[lang]; });
+    document.querySelectorAll('[data-lang]').forEach((btn) => {
+      if (btn.dataset.lang === lang) btn.setAttribute('aria-current', 'true'); else btn.removeAttribute('aria-current');
     });
     document.querySelectorAll('iframe[data-caption]').forEach((frame) => {
       const text = d[frame.dataset.caption];
@@ -370,14 +643,34 @@
     syncUrl(next);
   }
 
-  // AR and EN swap inside a circle that opens from the language button (View Transitions);
+  // The globe opens a list of the four languages. The chosen one opens inside a circle from the globe (View Transitions);
   // without the API a night curtain covers the swap; with reduced motion it is instant.
   function initLanguage() {
     apply(initialLang());
-    document.querySelectorAll('[data-lang-toggle]').forEach((btn) => {
+    const box = document.querySelector('[data-langs]');
+    const toggle = box && box.querySelector('[data-lang-toggle]');
+    if (!toggle) return;
+    const setOpen = (open) => {
+      box.dataset.open = String(open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => setOpen(box.dataset.open !== 'true'));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && box.dataset.open === 'true') { setOpen(false); toggle.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (box.dataset.open === 'true' && !box.contains(e.target)) setOpen(false);
+    });
+    box.addEventListener('focusout', (e) => {
+      if (!box.contains(e.relatedTarget)) setOpen(false);
+    });
+    box.querySelectorAll('[data-lang]').forEach((btn) => {
       btn.addEventListener('click', () => {
-        const next = current === 'ar' ? 'en' : 'ar';
-        const r = btn.getBoundingClientRect();
+        const next = btn.dataset.lang;
+        setOpen(false);
+        toggle.focus();
+        if (!isLang(next) || next === current) return;
+        const r = toggle.getBoundingClientRect();
         root.style.setProperty('--vt-x', Math.round(r.left + r.width / 2) + 'px');
         root.style.setProperty('--vt-y', Math.round(r.top + r.height / 2) + 'px');
         if (reduceMotion.matches) { switchTo(next); return; }
