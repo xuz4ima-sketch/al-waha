@@ -1,0 +1,50 @@
+:root {
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px; --space-5xl: 208px;
+  --text-xs: 0.8125rem; --text-sm: 0.9375rem; --text-md: 1.0625rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display: clamp(2.5rem, 3.6vw + 1rem, 4.75rem);
+  --text-section: clamp(2.25rem, 3vw + 1rem, 4.25rem); --text-title: clamp(1.375rem, 0.9vw + 1rem, 1.875rem); --text-lead: clamp(1.125rem, 0.45vw + 1rem, 1.4375rem);
+  --text-calli: clamp(6.5rem, 15vw + 1rem, 15.5rem); --text-mark: clamp(7rem, 30vw, 28rem); --text-num: clamp(5rem, 7vw + 1rem, 9rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms; --dur-scene: 900ms;
+  --color-error: oklch(52% 0.19 27); --color-error-on-dark: oklch(78% 0.13 30); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 160px; --section-gap-l: 208px;
+  --window-inset: 12px; --header-h: 84px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* Night: the indigo of the Blue Qur'an's dyed vellum. Ground of the hero, the teachers and the colophon. */
+  --color-night: oklch(19.5% 0.062 268); --color-night-2: oklch(25% 0.075 268); --color-night-3: oklch(32% 0.085 266);
+  --color-on-night: oklch(95.5% 0.022 85); --color-on-night-2: oklch(83% 0.035 255); --color-rule-night: oklch(42% 0.07 265);
+
+  /* Gold: the saffron gold of its Kufic and the star in the Al-Waha logo. The one action colour. */
+  --color-gold: oklch(81% 0.152 78); --color-gold-2: oklch(86.5% 0.135 86); --color-gold-deep: oklch(70% 0.15 70);
+  --color-gold-text: oklch(50% 0.11 68); --color-gold-wash: oklch(94% 0.06 85);
+  /* Spring: the turquoise water of Cleopatra's spring at Siwa. The application's ground. */
+  --color-spring: oklch(72% 0.12 195); --color-spring-deep: oklch(29% 0.06 215); --color-spring-ink: oklch(96% 0.02 190);
+  /* Dusk: the brand orange FF8552 from the old site, kept for the seal of each chapter number. */
+  --color-dusk: oklch(72% 0.165 42);
+  /* Paper: sand in the low sun, for the chapters and the voices. */
+  --color-paper: oklch(96% 0.022 84); --color-paper-2: oklch(92.5% 0.034 82); --color-paper-3: oklch(88% 0.045 80);
+  --color-ink: oklch(22% 0.06 268); --color-ink-2: oklch(34% 0.06 266); --color-muted: oklch(47% 0.05 262);
+  --color-rule: oklch(84% 0.035 80);
+  --color-accent: var(--color-gold); --color-accent-ink: var(--color-night);
+  --color-focus: oklch(45% 0.16 266); --color-focus-on-dark: var(--color-gold);
+  --color-shade: oklch(14% 0.05 268);
+
+  /* Reem Kufi: geometric Kufic in both scripts, the Blue Qur'an's own letter, as the display.
+     Readex Pro: one sans drawn for Arabic and Latin as equals, for reading and controls.
+     Aref Ruqaa: the calligraphic outlier, only for the name الواحة set as a picture. */
+  --font-display: "Reem Kufi", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "Readex Pro", "Segoe UI", Tahoma, sans-serif;
+  --font-outlier: "Aref Ruqaa", "Amiri", serif;
+  --display-weight: 600;
+
+  --radius-window: 28px; --radius-card: 20px; --radius-field: 14px; --radius-pill: 999px; --radius-arch: 999px 999px 18px 18px;
+  --rule-hair: 1px; --shadow-card: none;
+  --shadow-gold: 0 14px 30px -12px oklch(70% 0.15 70 / 0.65);
+  --shadow-lift: 0 24px 48px -24px oklch(14% 0.05 268 / 0.55);
+  --tracking-display: 0;
+}
+
+html[lang="en"] {
+  --tracking-display: -0.01em;
+}

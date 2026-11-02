@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; frame-src https://www.youtube-nocookie.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#101a3a">
+  <title>مركز الواحة | القرآن الكريم واللغة العربية لغير الناطقين بها</title>
+  <meta name="description" content="مركز الواحة لتعليم القرآن الكريم واللغة العربية والدراسات الإسلامية لغير الناطقين بها، بدروس مباشرة أينما كنت.">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/reem-kufi-arabic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/aref-ruqaa-arabic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/readex-pro-arabic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/vendor/gsap/gsap.min.js" defer></script>
+  <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/gsap/ScrollToPlugin.min.js" defer></script>
+  <script src="assets/vendor/gsap/ScrollSmoother.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 .5l3.37 3.37h4.76v4.76L23.5 12l-3.37 3.37v4.76h-4.76L12 23.5l-3.37-3.37H3.87v-4.76L.5 12l3.37-3.37V3.87h4.76z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 32 32"><path d="M16 9.5c-2.6-2-6.4-2.6-11-2.2v16c4.6-.4 8.4.2 11 2.2 2.6-2 6.4-2.6 11-2.2v-16c-4.6-.4-8.4.2-11 2.2zM16 9.5v16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 12.5c1.8 0 3.4.3 4.8 1M8.5 16.5c1.8 0 3.4.3 4.8 1M23.5 12.5c-1.8 0-3.4.3-4.8 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-hifz" viewBox="0 0 32 32"><path d="M9 5.5h14v21l-7-4.6-7 4.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M16 9.6l1.3 1.3h1.8v1.8l1.3 1.3-1.3 1.3v1.8h-1.8L16 18.4l-1.3-1.3h-1.8v-1.8l-1.3-1.3 1.3-1.3v-1.8h1.8z" fill="currentColor"/></symbol>
+    <symbol id="i-letter" viewBox="0 0 32 32"><rect x="4.5" y="4.5" width="23" height="23" rx="11.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 17.5c0 3 2.6 4.5 6 4.5h6M22 22v-5.5c0-2.6-1.8-4-4.2-4-2.2 0-3.6 1.4-3.6 3.2 0 1.6 1.2 2.6 3 2.6H22M17 9h.01" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arch" viewBox="0 0 32 32"><path d="M6.5 27V14.5a9.5 9.5 0 0 1 19 0V27M3.5 27h25M11 27v-9.5a5 5 0 0 1 10 0V27" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.2v2.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.870 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.750 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.080-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.020.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="skip" href="#main" data-i18n="skip">تخطَّ إلى المحتوى</a>
+
+  <header class="masthead" id="top" data-menu="closed">
+    <div class="masthead__bar">
+      <a class="brand" href="#top" data-i18n-aria="brand.home" aria-label="مركز الواحة، أعلى الصفحة">
+        <span class="brand__seal"><img class="brand__logo" src="assets/img/logo.png" width="256" height="256" alt=""></span>
+        <span class="brand__name" data-i18n="brand.name">مركز الواحة</span>
+      </a>
+      <nav class="nav" data-i18n-aria="nav.label" aria-label="أقسام الصفحة">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+          <span data-i18n="nav.menu">القائمة</span>
+        </button>
+        <ul class="nav__links" id="menu">
+          <li><a href="#programs" data-i18n="nav.programs">البرامج</a></li>
+          <li><a href="#leadership" data-i18n="nav.leaders">الإدارة</a></li>
+          <li><a href="#voices" data-i18n="nav.voices">آراء الطلاب</a></li>
+          <li><a href="#enrol" data-i18n="nav.enrol">التسجيل</a></li>
+        </ul>
+      </nav>
+      <div class="masthead__actions">
+        <button class="lang" type="button" lang="en" data-lang-toggle>English</button>
+        <a class="round" href="https://wa.me/201018573856" data-wa="wa.general" target="_blank" rel="noopener noreferrer" data-i18n-aria="wa.aria" aria-label="راسلنا على واتساب">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+        </a>
+        <a class="btn btn--gold btn--compact" href="#enrol" data-magnetic>
+          <span class="btn__label" data-i18n="cta.short">سجّل الآن</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div id="smooth-wrapper">
+  <div id="smooth-content">
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__window">
+        <picture class="hero__photo" data-hero-photo>
+          <source type="image/avif" srcset="assets/img/library-960.avif 960w, assets/img/library-1600.avif 1600w" sizes="100vw">
+          <img src="assets/img/library-1600.webp" srcset="assets/img/library-960.webp 960w, assets/img/library-1600.webp 1600w" sizes="100vw" width="1600" height="1200" fetchpriority="high" decoding="async" alt="">
+        </picture>
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__body">
+          <div class="hero__mark"><img src="assets/img/logo-512.webp" width="512" height="512" alt="" fetchpriority="high"></div>
+          <span class="hero__rule" aria-hidden="true"></span>
+          <h1 id="hero-title" class="hero__title" data-i18n="hero.name">مركز الواحة</h1>
+          <p class="hero__sub" data-i18n="hero.title">القرآن والعربية لغير الناطقين بها</p>
+          <p class="lead hero__lead" data-i18n="hero.lead">دروس مباشرة مع معلّمي مركز الواحة، أينما كنت في العالم.</p>
+          <div class="hero__actions">
+            <a class="btn btn--gold btn--large" href="#enrol" data-magnetic>
+              <span class="btn__label" data-i18n="hero.apply">قدّم طلب الدراسة</span>
+              <svg class="icon icon--dir" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn--glass btn--large" href="https://wa.me/201018573856" data-wa="wa.general" target="_blank" rel="noopener noreferrer" data-magnetic>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+              <span class="btn__label" data-i18n="hero.wa">اكتب لنا على واتساب</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doors" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="doors__head">
+          <h2 id="programs-title" data-i18n="programs.title" data-split>ثلاثة أبواب للدراسة</h2>
+          <p class="doors__intro" data-i18n="programs.intro">اختر ما تبدأ به، واكتب لنا لنقترح عليك المستوى المناسب.</p>
+          <div class="stars" aria-hidden="true" data-stars>
+            <svg viewBox="0 0 24 24" focusable="false"><use href="#i-star"/></svg>
+            <svg viewBox="0 0 24 24" focusable="false"><use href="#i-star"/></svg>
+            <svg viewBox="0 0 24 24" focusable="false"><use href="#i-star"/></svg>
+          </div>
+        </div>
+        <ol class="doors__list">
+          <li class="door" data-door>
+            <div class="door__art" aria-hidden="true">
+              <span class="door__num" data-i18n="n1">١</span>
+              <svg class="door__ill" viewBox="0 0 160 160" focusable="false">
+                <path class="frame" d="M28 150V74a52 52 0 0 1 104 0v76M18 150h124"/>
+                <use href="#i-star" x="72" y="34" width="16" height="16"/>
+                <path d="M80 66c-12-8-28-11-44-9v40c16-2 32 1 44 9 12-8 28-11 44-9V57c-16-2-32 1-44 9zM80 66v40"/>
+                <path class="thin" d="M44 67c10-1 20 1 28 5M44 77c10-1 20 1 28 5M44 87c10-1 20 1 28 5M116 67c-10-1-20 1-28 5M116 77c-10-1-20 1-28 5M116 87c-10-1-20 1-28 5"/>
+                <path d="M54 106l52 42M106 106l-52 42"/>
+              </svg>
+            </div>
+            <div class="door__text">
+              <h3 class="door__title" data-i18n="p1.title">القرآن الكريم وعلومه</h3>
+              <p class="door__desc" data-i18n="p1.desc">تعلّم تلاوة القرآن الكريم وحفظه مع فهم أحكام التجويد، بأسلوب مبسّط يناسب جميع المستويات.</p>
+              <div class="door__links">
+                <a class="door__pick" href="#enrol" data-pick="quran">
+                  <span data-i18n="p.pick">اختر هذا الباب</span>
+                  <svg class="icon icon--dir" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+                </a>
+                <a class="door__wa" href="https://wa.me/201018573856" data-wa="wa.p1" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+                  <span data-i18n="p1.cta">سجّل في القرآن الكريم</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="door" data-door>
+            <div class="door__art" aria-hidden="true">
+              <span class="door__num" data-i18n="n2">٢</span>
+              <svg class="door__ill" viewBox="0 0 160 160" focusable="false">
+                <path class="frame" d="M28 150V74a52 52 0 0 1 104 0v76M18 150h124"/>
+                <path d="M33 148h31c2-14-2-24-9-28v-8H42v8c-7 4-11 14-9 28zM38 112h21"/>
+                <path d="M49 116l4-10 54-64 4 3.5-54 64zM51.5 111l3.5-3.5"/>
+                <text x="104" y="130" text-anchor="middle">ض</text>
+                <path class="thin" d="M84 141c14 4 32 4 44-3"/>
+              </svg>
+            </div>
+            <div class="door__text">
+              <h3 class="door__title" data-i18n="p2.title">اللغة العربية</h3>
+              <p class="door__desc" data-i18n="p2.desc">ابدأ رحلتك في تعلّم اللغة العربية من الصفر حتى الإتقان، بدروس تفاعلية تناسب غير الناطقين بها.</p>
+              <div class="door__links">
+                <a class="door__pick" href="#enrol" data-pick="arabic">
+                  <span data-i18n="p.pick">اختر هذا الباب</span>
+                  <svg class="icon icon--dir" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+                </a>
+                <a class="door__wa" href="https://wa.me/201018573856" data-wa="wa.p2" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+                  <span data-i18n="p2.cta">سجّل في اللغة العربية</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="door" data-door>
+            <div class="door__art" aria-hidden="true">
+              <span class="door__num" data-i18n="n3">٣</span>
+              <svg class="door__ill" viewBox="0 0 160 160" focusable="false">
+                <path class="frame" d="M28 150V74a52 52 0 0 1 104 0v76M18 150h124"/>
+                <use href="#i-star" x="70" y="52" width="20" height="20"/>
+                <rect x="38" y="128" width="84" height="18" rx="3"/>
+                <rect x="46" y="110" width="72" height="18" rx="3"/>
+                <rect x="40" y="92" width="78" height="18" rx="3"/>
+                <path class="thin" d="M50 128v18M110 128v18M58 110v18M106 110v18M52 92v18M106 92v18"/>
+              </svg>
+            </div>
+            <div class="door__text">
+              <h3 class="door__title" data-i18n="p3.title">الدراسات الإسلامية</h3>
+              <p class="door__desc" data-i18n="p3.desc">اكتشف أساسيات العقيدة والفقه والسيرة النبوية بأسلوب مبسّط، مع اختيار المواعيد والخطة التعليمية التي تناسبك.</p>
+              <div class="door__links">
+                <a class="door__pick" href="#enrol" data-pick="studies">
+                  <span data-i18n="p.pick">اختر هذا الباب</span>
+                  <svg class="icon icon--dir" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+                </a>
+                <a class="door__wa" href="https://wa.me/201018573856" data-wa="wa.p3" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+                  <span data-i18n="p3.cta">سجّل في الدراسات الإسلامية</span>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="leaders" id="leadership" aria-labelledby="leaders-title">
+      <div class="leaders__texture" aria-hidden="true">
+        <picture>
+          <source type="image/avif" srcset="assets/img/blue-quran-960.avif 960w, assets/img/blue-quran-1600.avif 1600w" sizes="100vw">
+          <img src="assets/img/blue-quran-1600.webp" srcset="assets/img/blue-quran-960.webp 960w, assets/img/blue-quran-1600.webp 1600w" sizes="100vw" width="1600" height="1214" loading="lazy" decoding="async" alt="" data-parallax-bg>
+        </picture>
+      </div>
+      <div class="container leaders__grid">
+        <div class="leaders__head">
+          <h2 id="leaders-title" data-i18n="leaders.title" data-split>من يشرف على دراستك</h2>
+          <p class="leaders__note" data-i18n="leaders.note">خلف الصورة ورقة من «المصحف الأزرق»: ذهب على رقّ مصبوغ بالنيلة.</p>
+        </div>
+        <ul class="leaders__list">
+          <li class="person" data-person>
+            <svg class="person__star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>
+            <h3 class="person__name" data-i18n="l1.name">فضيلة الشيخ عبدالتواب الجمالي آل جودة</h3>
+            <p class="person__role" data-i18n="l1.role">المشرف العام على المركز</p>
+          </li>
+          <li class="person" data-person>
+            <svg class="person__star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>
+            <h3 class="person__name" data-i18n="l2.name">د. محمود أحمد فكري</h3>
+            <p class="person__role" data-i18n="l2.role">المستشار التعليمي لقطاع التعليم والدراسة بالمركز</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="voices" id="voices" aria-labelledby="voices-title">
+      <div class="container">
+        <div class="voices__head">
+          <h2 id="voices-title" data-i18n="voices.title" data-split>أولياء الأمور والطلاب يتحدثون</h2>
+          <a class="voices__channel" href="https://www.youtube.com/@AlwahaaCenter" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-youtube"/></svg>
+            <span data-i18n="voices.channel">المزيد على قناتنا في يوتيوب</span>
+          </a>
+        </div>
+        <div class="voices__grid">
+          <figure class="clip clip--lead" data-clip>
+            <a class="clip__poster" href="https://www.youtube.com/watch?v=plZvaP3GnaY" data-video="plZvaP3GnaY" data-caption="v1.title" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/video-plZvaP3GnaY.webp" width="960" height="540" loading="lazy" decoding="async" alt="">
+              <span class="clip__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><use href="#i-star"/><path class="clip__triangle" d="M10 8.2v7.6l6-3.8z"/></svg>
+              </span>
+              <span class="visually-hidden" data-i18n="voices.play">تشغيل الفيديو:</span>
+              <span class="visually-hidden" data-i18n="v1.title">حوار مع آباء طلاب مركز الواحة</span>
+            </a>
+            <figcaption data-i18n="v1.title">حوار مع آباء طلاب مركز الواحة</figcaption>
+          </figure>
+          <figure class="clip" data-clip>
+            <a class="clip__poster" href="https://www.youtube.com/watch?v=RPj7b26KRKU" data-video="RPj7b26KRKU" data-caption="v2.title" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/video-RPj7b26KRKU.webp" width="640" height="360" loading="lazy" decoding="async" alt="">
+              <span class="clip__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><use href="#i-star"/><path class="clip__triangle" d="M10 8.2v7.6l6-3.8z"/></svg>
+              </span>
+              <span class="visually-hidden" data-i18n="voices.play">تشغيل الفيديو:</span>
+              <span class="visually-hidden" data-i18n="v2.title">حوار مع أحد طلاب المركز</span>
+            </a>
+            <figcaption data-i18n="v2.title">حوار مع أحد طلاب المركز</figcaption>
+          </figure>
+          <figure class="clip" data-clip>
+            <a class="clip__poster" href="https://www.youtube.com/watch?v=obWFT4BEVIg" data-video="obWFT4BEVIg" data-caption="v3.title" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/video-obWFT4BEVIg.webp" width="640" height="360" loading="lazy" decoding="async" alt="">
+              <span class="clip__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><use href="#i-star"/><path class="clip__triangle" d="M10 8.2v7.6l6-3.8z"/></svg>
+              </span>
+              <span class="visually-hidden" data-i18n="voices.play">تشغيل الفيديو:</span>
+              <span class="visually-hidden" data-i18n="v3.title">حوار مع طلاب المركز</span>
+            </a>
+            <figcaption data-i18n="v3.title">حوار مع طلاب المركز</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="enrol" id="enrol" aria-labelledby="enrol-title">
+      <div class="enrol__water" aria-hidden="true">
+        <picture>
+          <source type="image/avif" srcset="assets/img/spring-1100.avif 1100w, assets/img/spring-1920.avif 1920w" sizes="100vw">
+          <img src="assets/img/spring-1920.webp" srcset="assets/img/spring-1100.webp 1100w, assets/img/spring-1920.webp 1920w" sizes="100vw" width="1920" height="1280" loading="lazy" decoding="async" alt="" data-parallax-bg>
+        </picture>
+      </div>
+      <div class="container enrol__grid">
+        <div class="enrol__head">
+          <h2 id="enrol-title" data-i18n="enrol.title" data-split>قدّم طلب الدراسة</h2>
+          <p class="lead enrol__intro" data-i18n="enrol.intro">ستّ خطوات قصيرة، ثم يفتح طلبك في واتساب المركز لنقترح عليك المستوى والموعد.</p>
+          <p class="enrol__alt">
+            <span data-i18n="enrol.alt">تفضّل الكلام مباشرة؟</span>
+            <a href="https://wa.me/201018573856" data-wa="wa.general" target="_blank" rel="noopener noreferrer" data-i18n="enrol.alt.link">اكتب لنا على واتساب</a>
+          </p>
+        </div>
+
+        <form class="apply" id="apply" novalidate data-apply>
+          <div class="apply__progress">
+            <div class="apply__meter">
+              <p class="apply__count" id="apply-count"><span data-i18n="f.step">الخطوة</span> <span class="num" data-step-now>١</span> <span data-i18n="f.of">من</span> <span class="num" data-step-total>٧</span></p>
+              <div class="apply__bar" role="progressbar" aria-labelledby="apply-count" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1"><span class="apply__fill" data-fill></span></div>
+            </div>
+            <ol class="apply__steps" data-i18n-aria="f.steps" aria-label="خطوات الطلب">
+              <li><button type="button" data-goto="1" data-i18n="f.s1">الطالب</button></li>
+              <li><button type="button" data-goto="2" data-i18n="f.s2">البرامج</button></li>
+              <li><button type="button" data-goto="3" data-i18n="f.s3">المستوى</button></li>
+              <li><button type="button" data-goto="4" data-i18n="f.s4">الشكل</button></li>
+              <li><button type="button" data-goto="5" data-i18n="f.s5">المواعيد</button></li>
+              <li><button type="button" data-goto="6" data-i18n="f.s6">التواصل</button></li>
+              <li><button type="button" data-goto="7" data-i18n="f.s7">المراجعة</button></li>
+            </ol>
+          </div>
+          <p class="visually-hidden" aria-live="polite" data-announce></p>
+
+          <div class="apply__stage">
+            <fieldset class="apply__step" data-step="1">
+              <legend class="apply__legend" tabindex="-1" data-i18n="f.s1.title">من سيدرس معنا؟</legend>
+              <div class="field">
+                <label for="f-name" data-i18n="f.name">اسم الطالب</label>
+                <input class="input" id="f-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="f-name-msg">
+                <p class="field__msg" id="f-name-msg"></p>
+              </div>
+              <fieldset class="choice" data-required="group" aria-describedby="f-group-msg">
+                <legend data-i18n="f.group">الفئة العمرية</legend>
+                <div class="choice__row choice__row--3">
+                  <label class="opt"><input type="radio" name="group" value="child"><span class="opt__body"><span class="opt__title" data-i18n="f.group.child">طفل</span><span class="opt__hint" data-i18n="f.group.child.hint">حتى ١٢ سنة</span></span></label>
+                  <label class="opt"><input type="radio" name="group" value="teen"><span class="opt__body"><span class="opt__title" data-i18n="f.group.teen">ناشئ</span><span class="opt__hint" data-i18n="f.group.teen.hint">من ١٣ إلى ١٧ سنة</span></span></label>
+                  <label class="opt"><input type="radio" name="group" value="adult"><span class="opt__body"><span class="opt__title" data-i18n="f.group.adult">بالغ</span><span class="opt__hint" data-i18n="f.group.adult.hint">١٨ سنة فأكثر</span></span></label>
+                </div>
+                <p class="field__msg" id="f-group-msg"></p>
+              </fieldset>
+              <div class="field-row">
+                <div class="field field--short">
+                  <label for="f-age" data-i18n="f.age">العمر (اختياري)</label>
+                  <input class="input" id="f-age" name="age" type="number" inputmode="numeric" min="3" max="99" aria-describedby="f-age-msg">
+                  <p class="field__msg" id="f-age-msg"></p>
+                </div>
+                <fieldset class="choice" data-required="gender" aria-describedby="f-gender-msg">
+                  <legend data-i18n="f.gender">الجنس</legend>
+                  <div class="choice__row choice__row--2">
+                    <label class="opt opt--slim"><input type="radio" name="gender" value="male"><span class="opt__body"><span class="opt__title" data-i18n="f.gender.male">ذكر</span></span></label>
+                    <label class="opt opt--slim"><input type="radio" name="gender" value="female"><span class="opt__body"><span class="opt__title" data-i18n="f.gender.female">أنثى</span></span></label>
+                  </div>
+                  <p class="field__msg" id="f-gender-msg"></p>
+                </fieldset>
+              </div>
+              <div class="field" data-parent hidden>
+                <label for="f-parent" data-i18n="f.parent">اسم وليّ الأمر</label>
+                <input class="input" id="f-parent" name="parent" type="text" autocomplete="off" aria-describedby="f-parent-msg">
+                <p class="field__msg" id="f-parent-msg"></p>
+              </div>
+            </fieldset>
+
+            <fieldset class="apply__step" data-step="2">
+              <legend class="apply__legend" tabindex="-1" data-i18n="f.s2.title">ماذا تريد أن تدرس؟</legend>
+              <p class="apply__hint" data-i18n="f.s2.hint">اختر بابًا أو أكثر.</p>
+              <fieldset class="choice" data-required="programs" aria-describedby="f-programs-msg">
+                <legend class="visually-hidden" data-i18n="f.s2">البرامج</legend>
+                <div class="choice__row choice__row--cards">
+                  <label class="opt opt--card"><input type="checkbox" name="programs" value="quran"><span class="opt__body"><svg class="opt__icon" aria-hidden="true" focusable="false"><use href="#i-book"/></svg><span class="opt__title" data-i18n="prog.quran">التلاوة والتجويد</span><span class="opt__hint" data-i18n="prog.quran.hint">قراءة صحيحة بأحكام التجويد</span></span></label>
+                  <label class="opt opt--card"><input type="checkbox" name="programs" value="hifz"><span class="opt__body"><svg class="opt__icon" aria-hidden="true" focusable="false"><use href="#i-hifz"/></svg><span class="opt__title" data-i18n="prog.hifz">حفظ القرآن الكريم</span><span class="opt__hint" data-i18n="prog.hifz.hint">حفظ ومراجعة مع المعلّم</span></span></label>
+                  <label class="opt opt--card"><input type="checkbox" name="programs" value="arabic"><span class="opt__body"><svg class="opt__icon" aria-hidden="true" focusable="false"><use href="#i-letter"/></svg><span class="opt__title" data-i18n="prog.arabic">اللغة العربية</span><span class="opt__hint" data-i18n="prog.arabic.hint">من الحرف الأول حتى الإتقان</span></span></label>
+                  <label class="opt opt--card"><input type="checkbox" name="programs" value="studies"><span class="opt__body"><svg class="opt__icon" aria-hidden="true" focusable="false"><use href="#i-arch"/></svg><span class="opt__title" data-i18n="prog.studies">الدراسات الإسلامية</span><span class="opt__hint" data-i18n="prog.studies.hint">العقيدة والفقه والسيرة</span></span></label>
+                </div>
+                <p class="field__msg" id="f-programs-msg"></p>
+              </fieldset>
+            </fieldset>
+
+            <fieldset class="apply__step" data-step="3">
+              <legend class="apply__legend" tabindex="-1" data-i18n="f.s3.title">من أين تبدأ؟</legend>
+              <fieldset class="choice" data-required="level" aria-describedby="f-level-msg">
+                <legend class="visually-hidden" data-i18n="f.s3">المستوى</legend>
+                <div class="choice__row choice__row--stack">
+                  <label class="opt opt--wide"><input type="radio" name="level" value="zero"><span class="opt__body"><span class="opt__title" data-i18n="level.zero">من الصفر</span><span class="opt__hint" data-i18n="level.zero.hint">لم أدرس هذا من قبل.</span></span></label>
+                  <label class="opt opt--wide"><input type="radio" name="level" value="basic"><span class="opt__body"><span class="opt__title" data-i18n="level.basic">مستوى أساسي</span><span class="opt__hint" data-i18n="level.basic.hint">أعرف الأساسيات وأريد أن أتقدّم.</span></span></label>
+                  <label class="opt opt--wide"><input type="radio" name="level" value="continuing"><span class="opt__body"><span class="opt__title" data-i18n="level.continuing">متابعة</span><span class="opt__hint" data-i18n="level.continuing.hint">درست قبل ذلك وأريد أن أكمل.</span></span></label>
+                </div>
+                <p class="field__msg" id="f-level-msg"></p>
+              </fieldset>
+            </fieldset>
+
+            <fieldset class="apply__step" data-step="4">
+              <legend class="apply__legend" tabindex="-1" data-i18n="f.s4.title">كيف تحبّ أن تدرس؟</legend>
+              <fieldset class="choice" data-required="mode" aria-describedby="f-mode-msg">
+                <legend data-i18n="f.mode">مكان الدرس</legend>
+                <div class="choice__row choice__row--2">
+                  <label class="opt opt--slim"><input type="radio" name="mode" value="online"><span class="opt__body"><span class="opt__title" data-i18n="mode.online">عن بُعد</span></span></label>
+                  <label class="opt opt--slim"><input type="radio" name="mode" value="onsite"><span class="opt__body"><span class="opt__title" data-i18n="mode.onsite">حضوريًا في المركز</span></span></label>
+                </div>
+                <p class="field__msg" id="f-mode-msg"></p>
+              </fieldset>
+              <fieldset class="choice" data-required="size" aria-describedby="f-size-msg">
+                <legend data-i18n="f.size">الدرس</legend>
+                <div class="choice__row choice__row--2">
+                  <label class="opt opt--slim"><input type="radio" name="size" value="solo"><span class="opt__body"><span class="opt__title" data-i18n="size.solo">فردي</span></span></label>
+                  <label class="opt opt--slim"><input type="radio" name="size" value="group"><span class="opt__body"><span class="opt__title" data-i18n="size.group">في مجموعة</span></span></label>
+                </div>
+                <p class="field__msg" id="f-size-msg"></p>
+              </fieldset>
+              <fieldset class="choice" data-required="teacher" aria-describedby="f-teacher-msg">
+                <legend data-i18n="f.teacher">المعلّم المفضّل</legend>
+                <div class="choice__row choice__row--3">
+                  <label class="opt opt--slim"><input type="radio" name="teacher" value="male"><span class="opt__body"><span class="opt__title" data-i18n="teacher.male">معلّم</span></span></label>
+                  <label class="opt opt--slim"><input type="radio" name="teacher" value="female"><span class="opt__body"><span class="opt__title" data-i18n="teacher.female">معلّمة</span></span></label>
+                  <label class="opt opt--slim"><input type="radio" name="teacher" value="any"><span class="opt__body"><span class="opt__title" data-i18n="teacher.any">لا فرق</span></span></label>
+                </div>
+                <p class="field__msg" id="f-teacher-msg"></p>
+              </fieldset>
+            </fieldset>
+
+            <fieldset class="apply__step" data-step="5">
+              <legend class="apply__legend" tabindex="-1" data-i18n="f.s5.title">متى يناسبك الدرس؟</legend>
+              <fieldset class="choice" data-required="days" aria-describedby="f-days-msg">
+                <legend data-i18n="f.days">الأيام</legend>
+                <div class="chips">
+                  <label class="chip"><input type="checkbox" name="days" value="sat"><span data-i18n="day.sat">السبت</span></label>
+                  <label class="chip"><input type="checkbox" name="days" value="sun"><span data-i18n="day.sun">الأحد</span></label>
+                  <label class="chip"><input type="checkbox" name="days" value="mon"><span data-i18n="day.mon">الاثنين</span></label>
+                  <label class="chip"><input type="checkbox" name="days" value="tue"><span data-i18n="day.tue">الثلاثاء</span></label>
+                  <label class="chip"><input type="checkbox" name="days" value="wed"><span data-i18n="day.wed">الأربعاء</span></label>
+                  <label class="chip"><input type="checkbox" name="days" value="thu"><span data-i18n="day.thu">الخميس</span></label>
+                  <label class="chip"><input type="checkbox" name="days" value="fri"><span data-i18n="day.fri">الجمعة</span></label>
+                </div>
+                <p class="field__msg" id="f-days-msg"></p>
+              </fieldset>
+              <fieldset class="choice" data-required="times" aria-describedby="f-times-msg">
+                <legend data-i18n="f.times">الوقت من اليوم (بتوقيتك)</legend>
+                <div class="choice__row choice__row--3">
+                  <label class="opt opt--slim"><input type="checkbox" name="times" value="morning"><span class="opt__body"><span class="opt__title" data-i18n="time.morning">صباحًا</span><span class="opt__hint num" data-i18n="time.morning.hint">من ٨ إلى ١٢</span></span></label>
+                  <label class="opt opt--slim"><input type="checkbox" name="times" value="afternoon"><span class="opt__body"><span class="opt__title" data-i18n="time.afternoon">بعد الظهر</span><span class="opt__hint num" data-i18n="time.afternoon.hint">من ١٢ إلى ٥</span></span></label>
+                  <label class="opt opt--slim"><input type="checkbox" name="times" value="evening"><span class="opt__body"><span class="opt__title" data-i18n="time.evening">مساءً</span><span class="opt__hint num" data-i18n="time.evening.hint">من ٥ إلى ١٠</span></span></label>
+                </div>
+                <p class="field__msg" id="f-times-msg"></p>
+              </fieldset>
+              <div class="field">
+                <label for="f-tz" data-i18n="f.tz">منطقتك الزمنية</label>
+                <div class="select">
+                  <select class="input" id="f-tz" name="tz" aria-describedby="f-tz-msg">
+                    <option value="Africa/Cairo">Africa/Cairo</option>
+                  </select>
+                </div>
+                <p class="field__msg field__msg--hint" id="f-tz-msg" data-i18n="f.tz.hint">اخترناها من إعدادات جهازك، ويمكنك تغييرها.</p>
+              </div>
+            </fieldset>
+
+            <fieldset class="apply__step" data-step="6">
+              <legend class="apply__legend" tabindex="-1" data-i18n="f.s6.title">كيف نتواصل معك؟</legend>
+              <div class="field">
+                <label for="f-phone" data-i18n="f.phone">رقم واتساب أو الهاتف</label>
+                <input class="input" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required aria-required="true" aria-describedby="f-phone-msg" placeholder="+20 100 000 0000">
+                <p class="field__msg field__msg--hint" id="f-phone-msg" data-i18n="f.phone.hint">مع رمز الدولة، مثل ‎+20 أو ‎+7.</p>
+              </div>
+              <div class="field">
+                <label for="f-email" data-i18n="f.email">البريد الإلكتروني (اختياري)</label>
+                <input class="input" id="f-email" name="email" type="email" autocomplete="email" dir="ltr" aria-describedby="f-email-msg" placeholder="name@example.com">
+                <p class="field__msg" id="f-email-msg"></p>
+              </div>
+              <div class="field">
+                <label for="f-note" data-i18n="f.note">ملاحظة للمعلّم (اختياري)</label>
+                <textarea class="input input--area" id="f-note" name="note" rows="3" maxlength="600" aria-describedby="f-note-msg"></textarea>
+                <p class="field__msg field__msg--hint" id="f-note-msg" data-i18n="f.note.hint">مثلًا: ما الذي درسته من قبل، أو ما تريد أن تصل إليه.</p>
+              </div>
+            </fieldset>
+
+            <fieldset class="apply__step" data-step="7">
+              <legend class="apply__legend" tabindex="-1" data-i18n="f.s7.title">راجع طلبك</legend>
+              <dl class="review" data-review></dl>
+              <p class="apply__hint" data-i18n="f.s7.hint">عند الإرسال يفتح واتساب برسالة جاهزة إلى رقم المركز ‎+20 101 857 3856، فاضغط «إرسال» هناك.</p>
+            </fieldset>
+
+            <div class="apply__done" data-done hidden tabindex="-1">
+              <svg class="done__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <path class="done__star" d="M32 3l8.5 8.5h12v12L61 32l-8.5 8.5v12h-12L32 61l-8.5-8.5h-12v-12L3 32l8.5-8.5v-12h12z"/>
+                <path class="done__tick" d="M21 33l7.5 7.5L44 25"/>
+              </svg>
+              <h3 class="done__title" data-i18n="f.done.title">طلبك جاهز في واتساب</h3>
+              <p class="done__text" data-i18n="f.done.text">اضغط «إرسال» في واتساب، وسيردّ عليك المركز ليتّفق معك على المستوى والموعد. إن لم يُفتح واتساب، فاضغط الزر أدناه.</p>
+              <div class="done__actions">
+                <a class="btn btn--gold" href="https://wa.me/201018573856" target="_blank" rel="noopener noreferrer" data-done-link>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+                  <span class="btn__label" data-i18n="f.done.again">افتح واتساب</span>
+                </a>
+                <button class="btn btn--line" type="button" data-restart><span class="btn__label" data-i18n="f.done.new">طلب لطالب آخر</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="apply__nav" data-nav>
+            <button class="btn btn--line" type="button" data-prev disabled>
+              <svg class="icon icon--dir icon--back" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+              <span class="btn__label" data-i18n="f.prev">السابق</span>
+            </button>
+            <button class="btn btn--gold" type="submit" data-next data-magnetic>
+              <span class="btn__label" data-next-label data-i18n="f.next">التالي</span>
+              <svg class="icon icon--dir" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+          <p class="apply__nojs" data-i18n="f.nojs">هذا النموذج يحتاج إلى JavaScript. يمكنك أن تكتب لنا مباشرة على واتساب: ‎+20 101 857 3856</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="container">
+      <div class="colophon__ask">
+        <h2 class="colophon__title" data-i18n="footer.title" data-split>اكتب لنا، ونساعدك في اختيار البرنامج المناسب لمستواك.</h2>
+        <div class="colophon__actions">
+          <a class="btn btn--gold btn--large" href="https://wa.me/201018573856" data-wa="wa.general" target="_blank" rel="noopener noreferrer" data-magnetic>
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+            <span class="btn__label" data-i18n="hero.wa">اكتب لنا على واتساب</span>
+          </a>
+          <p class="colophon__number"><span data-i18n="footer.number">رقم واتساب</span> <span class="num" dir="ltr">+20 101 857 3856</span></p>
+        </div>
+      </div>
+      <div class="colophon__mid">
+        <div class="colophon__platform">
+          <a class="colophon__link" href="https://edu.alwaha-center.com/" target="_blank" rel="noopener noreferrer" data-i18n="footer.platform">منصة الواحة التعليمية</a>
+          <p data-i18n="footer.platform.note">دروس مباشرة وتسجيلات تفاعلية، من أي مكان في العالم.</p>
+        </div>
+        <ul class="social" data-i18n-aria="footer.social" aria-label="تابعنا">
+          <li><a href="https://www.facebook.com/profile.php?id=61558816506220" target="_blank" rel="noopener noreferrer" data-i18n-aria="s.facebook" aria-label="فيسبوك"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg></a></li>
+          <li><a href="https://www.instagram.com/alwahaa_center/" target="_blank" rel="noopener noreferrer" data-i18n-aria="s.instagram" aria-label="إنستغرام"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-instagram"/></svg></a></li>
+          <li><a href="https://www.youtube.com/@AlwahaaCenter" target="_blank" rel="noopener noreferrer" data-i18n-aria="s.youtube" aria-label="يوتيوب"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-youtube"/></svg></a></li>
+          <li><a href="https://www.tiktok.com/@alwahaa_center" target="_blank" rel="noopener noreferrer" data-i18n-aria="s.tiktok" aria-label="تيك توك"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-tiktok"/></svg></a></li>
+        </ul>
+      </div>
+      <p class="colophon__mark" aria-hidden="true" lang="ar">الواحة</p>
+      <div class="colophon__base">
+        <div class="colophon__brand">
+          <img src="assets/img/logo.png" width="256" height="256" loading="lazy" decoding="async" alt="" class="colophon__logo">
+          <div>
+            <p class="colophon__name" data-i18n="brand.name">مركز الواحة</p>
+            <p class="colophon__branch" data-i18n="footer.branch">الفرع الجديد للأكاديمية العلمية للنشء الصغير والأجيال القادمة.</p>
+          </div>
+        </div>
+        <ul class="credits" data-i18n-aria="credits.label" aria-label="مصادر الصور">
+          <li><span data-i18n="credit.spring">عين كليوباترا في سيوة:</span> <a href="https://commons.wikimedia.org/wiki/File:Siwa_Oasis,_Cleopatra%27s_Bath,_Egypt.jpg" target="_blank" rel="noopener noreferrer">Vyacheslav Argenberg, CC BY 4.0</a></li>
+          <li><span data-i18n="credit.quran">ورقة من المصحف الأزرق:</span> <a href="https://commons.wikimedia.org/wiki/File:Folio_from_the_Blue_Qur%27an_(CBL_Is_1405A,_f._1b).jpg" target="_blank" rel="noopener noreferrer" data-i18n="credit.pd">ملكية عامة</a></li>
+        </ul>
+        <p class="colophon__copy" data-i18n="footer.copy">© ٢٠٢٦ مركز الواحة</p>
+      </div>
+    </div>
+  </footer>
+  </div>
+  </div>
+  <div class="curtain" aria-hidden="true"></div>
+</body>
+</html>
