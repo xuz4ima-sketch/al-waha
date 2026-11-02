@@ -11,13 +11,13 @@
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/reem-kufi-arabic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/readex-pro-arabic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=20261102b">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261102c">
   <script src="assets/vendor/gsap/gsap.min.js" defer></script>
   <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
   <script src="assets/vendor/gsap/ScrollToPlugin.min.js" defer></script>
   <script src="assets/vendor/gsap/ScrollSmoother.min.js" defer></script>
-  <script src="assets/js/main.js?v=20261102b" defer></script>
-  <script src="assets/js/motion.js?v=20261102b" defer></script>
+  <script src="assets/js/main.js?v=20261102c" defer></script>
+  <script src="assets/js/motion.js?v=20261102c" defer></script>
 </head>
 <body>
   <svg class="sprite" aria-hidden="true" focusable="false">
@@ -203,6 +203,21 @@
             </div>
           </li>
         </ol>
+
+        <div class="day" aria-labelledby="day-title">
+          <div class="day__head">
+            <h3 id="day-title" class="day__title" data-i18n="day.title">اليوم الدراسي</h3>
+            <p class="day__note" data-i18n="day.note">فترتان كل يوم، بتوقيت القاهرة.</p>
+          </div>
+          <ol class="day__line">
+            <li class="day__shift day__shift--am"><span data-i18n="shift.am">الفترة الصباحية</span> <span class="num" data-i18n="shift.am.time">٨:٠٠ – ١٤:٠٠</span></li>
+            <li class="day__slot day__slot--arabic"><span class="day__time num" data-i18n="slot.arabic.time">٨:٠٠ – ١٠:٠٠</span><span class="day__subject" data-i18n="slot.arabic">اللغة العربية</span></li>
+            <li class="day__slot day__slot--break"><span class="day__time num" data-i18n="slot.break.time">١٠:٠٠ – ١٠:٣٠</span><span class="day__subject" data-i18n="slot.break">استراحة</span></li>
+            <li class="day__slot day__slot--quran"><span class="day__time num" data-i18n="slot.quran.time">١٠:٣٠ – ١٢:٠٠</span><span class="day__subject" data-i18n="slot.quran">القرآن الكريم</span></li>
+            <li class="day__slot day__slot--studies"><span class="day__time num" data-i18n="slot.studies.time">١٢:٠٠ – ١٤:٠٠</span><span class="day__subject" data-i18n="slot.studies">العلوم الشرعية</span></li>
+            <li class="day__slot day__slot--evening"><span class="day__time num" data-i18n="shift.pm.time">١٤:٠٠ – ١٧:٠٠</span><span class="day__subject" data-i18n="shift.pm">الفترة المسائية</span></li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -225,7 +240,7 @@
             <p class="person__role" data-i18n="l1.role">المشرف العام على المركز</p>
           </li>
           <li class="person" data-person>
-            <div class="person__portrait"><img src="assets/img/portrait-doctor.webp" width="480" height="560" loading="lazy" decoding="async" alt=""></div>
+            <div class="person__portrait"><img src="assets/img/portrait-doctor.webp?v=20261102c" width="480" height="560" loading="lazy" decoding="async" alt=""></div>
             <h3 class="person__name" data-i18n="l2.name">د. محمود أحمد فكري</h3>
             <p class="person__role" data-i18n="l2.role">المستشار التعليمي لقطاع التعليم والدراسة بالمركز</p>
           </li>
@@ -401,13 +416,12 @@
                 <p class="field__msg" id="f-size-msg"></p>
               </fieldset>
               <fieldset class="choice" data-required="teacher" aria-describedby="f-teacher-msg">
-                <legend data-i18n="f.teacher">المعلّم المفضّل</legend>
-                <div class="choice__row choice__row--3">
+                <legend data-i18n="f.teacher">المعلّم</legend>
+                <div class="choice__row choice__row--2">
                   <label class="opt opt--slim"><input type="radio" name="teacher" value="male"><span class="opt__body"><span class="opt__title" data-i18n="teacher.male">معلّم</span></span></label>
                   <label class="opt opt--slim"><input type="radio" name="teacher" value="female"><span class="opt__body"><span class="opt__title" data-i18n="teacher.female">معلّمة</span></span></label>
-                  <label class="opt opt--slim"><input type="radio" name="teacher" value="any"><span class="opt__body"><span class="opt__title" data-i18n="teacher.any">لا فرق</span></span></label>
                 </div>
-                <p class="field__msg" id="f-teacher-msg"></p>
+                <p class="field__msg field__msg--hint" id="f-teacher-msg" data-i18n="f.teacher.hint">الطلاب يدرسون مع معلّم، والطالبات مع معلّمة.</p>
               </fieldset>
             </fieldset>
 
@@ -427,11 +441,10 @@
                 <p class="field__msg" id="f-days-msg"></p>
               </fieldset>
               <fieldset class="choice" data-required="times" aria-describedby="f-times-msg">
-                <legend data-i18n="f.times">الوقت من اليوم (بتوقيتك)</legend>
-                <div class="choice__row choice__row--3">
-                  <label class="opt opt--slim"><input type="checkbox" name="times" value="morning"><span class="opt__body"><span class="opt__title" data-i18n="time.morning">صباحًا</span><span class="opt__hint num" data-i18n="time.morning.hint">من ٨ إلى ١٢</span></span></label>
-                  <label class="opt opt--slim"><input type="checkbox" name="times" value="afternoon"><span class="opt__body"><span class="opt__title" data-i18n="time.afternoon">بعد الظهر</span><span class="opt__hint num" data-i18n="time.afternoon.hint">من ١٢ إلى ٥</span></span></label>
-                  <label class="opt opt--slim"><input type="checkbox" name="times" value="evening"><span class="opt__body"><span class="opt__title" data-i18n="time.evening">مساءً</span><span class="opt__hint num" data-i18n="time.evening.hint">من ٥ إلى ١٠</span></span></label>
+                <legend data-i18n="f.times">الفترة (بتوقيت القاهرة)</legend>
+                <div class="choice__row choice__row--2">
+                  <label class="opt opt--slim"><input type="checkbox" name="times" value="morning"><span class="opt__body"><span class="opt__title" data-i18n="time.morning">الفترة الصباحية</span><span class="opt__hint num" data-i18n="time.morning.hint">٨:٠٠ – ١٤:٠٠</span></span></label>
+                  <label class="opt opt--slim"><input type="checkbox" name="times" value="evening"><span class="opt__body"><span class="opt__title" data-i18n="time.evening">الفترة المسائية</span><span class="opt__hint num" data-i18n="time.evening.hint">١٤:٠٠ – ١٧:٠٠</span></span></label>
                 </div>
                 <p class="field__msg" id="f-times-msg"></p>
               </fieldset>
@@ -536,10 +549,6 @@
             <p class="colophon__branch" data-i18n="footer.branch">الفرع الجديد للأكاديمية العلمية للنشء الصغير والأجيال القادمة.</p>
           </div>
         </div>
-        <ul class="credits" data-i18n-aria="credits.label" aria-label="مصادر الصور">
-          <li><span data-i18n="credit.spring">عين كليوباترا في سيوة:</span> <a href="https://commons.wikimedia.org/wiki/File:Siwa_Oasis,_Cleopatra%27s_Bath,_Egypt.jpg" target="_blank" rel="noopener noreferrer">Vyacheslav Argenberg, CC BY 4.0</a></li>
-          <li><span data-i18n="credit.quran">ورقة من المصحف الأزرق:</span> <a href="https://commons.wikimedia.org/wiki/File:Folio_from_the_Blue_Qur%27an_(CBL_Is_1405A,_f._1b).jpg" target="_blank" rel="noopener noreferrer" data-i18n="credit.pd">ملكية عامة</a></li>
-        </ul>
         <p class="colophon__copy" data-i18n="footer.copy">© ٢٠٢٦ مركز الواحة</p>
       </div>
     </div>
