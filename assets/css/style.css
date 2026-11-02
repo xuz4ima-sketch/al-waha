@@ -12,9 +12,9 @@
 /* Hallmark · answered F4 · the night pill in the form's step list marks the current step, it is state, not a second primary action */
 /* Hallmark · answered F7 · every pill left is a control: the skip link, nav links, the language and WhatsApp buttons, step and day chips */
 /* Hallmark · answered F20 · the doors head is a two-column head and intro with the star rule under both, not a grid of items */
-@import url("./fonts.css");
-@import url("./tokens.css");
-@import url("./base.css");
+@import url("./fonts.css?v=20261102b");
+@import url("./tokens.css?v=20261102b");
+@import url("./base.css?v=20261102b");
 
 /* Page */
 :root { --color-field: oklch(99% 0.008 85); --ar-display-step: 1.18; }
